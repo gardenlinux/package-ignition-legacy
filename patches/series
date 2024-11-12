@@ -1,2 +1,2 @@
-build-deps.patch
-detect-selinux.patch
+rules.patch
+control.patch
