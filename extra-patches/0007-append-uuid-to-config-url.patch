@@ -1,0 +1,53 @@
+--- a/internal/providers/cmdline/cmdline.go
++++ b/internal/providers/cmdline/cmdline.go
+@@ -33,7 +33,9 @@ import (
+ )
+
+ const (
+-	cmdlineUrlFlag = "ignition.config.url"
++	cmdlineUrlFlag   = "ignition.config.url"
++	cmdlineUrlSuffix = "ignition.config.url.append.uuid"
++	uuidFile         = "/sys/devices/virtual/dmi/id/product_uuid"
+ )
+
+ var (
+@@ -70,13 +72,23 @@ func readCmdline(logger *log.Logger) (*url.URL, error) {
+ 		return nil, err
+ 	}
+
+-	rawUrl := parseCmdline(args)
++	rawUrl := parseCmdline(args, cmdlineUrlFlag)
+ 	logger.Debug("parsed url from cmdline: %q", rawUrl)
+ 	if rawUrl == "" {
+ 		logger.Info("no config URL provided")
+ 		return nil, nil
+ 	}
+
++	appendUUID := parseCmdline(args, cmdlineUrlSuffix)
++	if appendUUID == "1" || appendUUID == "true" {
++		uuid, err := os.ReadFile(uuidFile)
++		if err != nil {
++			logger.Err("failed to read UUID from system: %v", err)
++			return nil, err
++		}
++		rawUrl = rawUrl + "/" + strings.TrimSuffix(string(uuid), "\n")
++	}
++
+ 	url, err := url.Parse(rawUrl)
+ 	if err != nil {
+ 		logger.Err("failed to parse url: %v", err)
+@@ -86,12 +98,12 @@ func readCmdline(logger *log.Logger) (*url.URL, error) {
+ 	return url, err
+ }
+
+-func parseCmdline(cmdline []byte) (url string) {
++func parseCmdline(cmdline []byte, param string) (url string) {
+ 	for _, arg := range strings.Split(string(cmdline), " ") {
+ 		parts := strings.SplitN(strings.TrimSpace(arg), "=", 2)
+ 		key := parts[0]
+
+-		if key != cmdlineUrlFlag {
++		if key != param {
+ 			continue
+ 		}
+
