@@ -1,6 +1,14 @@
+diff --git a/debian/control b/debian/control
+index 1eee9046..37005804 100644
 --- a/debian/control
 +++ b/debian/control
-@@ -8,32 +8,13 @@
+@@ -1,4 +1,4 @@
+-Source: ignition
++Source: ignition-legacy
+ Maintainer: Debian Cloud Team <debian-cloud@lists.debian.org>
+ Uploaders: Michael Banck <mbanck@debian.org>
+ Section: golang
+@@ -8,37 +8,19 @@ Build-Depends: debhelper-compat (= 13),
                 dh-exec,
                 dh-golang,
                 golang-any,
@@ -32,5 +40,12 @@
 -XS-Go-Import-Path: github.com/coreos/ignition
 +XS-Go-Import-Path: github.com/coreos/ignition/v2
 
- Package: ignition
+-Package: ignition
++Package: ignition-legacy
  Architecture: any
+ Depends: ${misc:Depends},
+          ${shlibs:Depends}
++Conflicts: ignition
+ Built-Using: ${misc:Built-Using}
+ Description: First boot installer and configuration tool
+  Ignition is the utility invented for Fedora CoreOS and RHEL CoreOS to

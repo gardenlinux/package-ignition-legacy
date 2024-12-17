@@ -1,0 +1,263 @@
+diff --git a/debian/copyright b/debian/copyright
+index e9b6640f..4052bec4 100644
+--- a/debian/copyright
++++ b/debian/copyright
+@@ -4,7 +4,257 @@ Upstream-Contact: https://github.com/coreos/ignition/issues
+ Source: https://github.com/coreos/ignition
+ Files-Excluded:
+  DCO
+- vendor
++
++Files: vendor/google.golang.org/genproto/*
++Copyright: 2024 Google LLC
++License: Apache-2.0
++
++Files: vendor/google.golang.org/protobuf/*
++Copyright: 2018 The Go Authors
++           2008 Google Inc.
++License: BSD-3-Clause
++
++Files: vendor/google.golang.org/grpc/*
++Copyright: 2014 gRPC authors.
++           2015 gRPC authors.
++           2016 gRPC authors.
++           2017 gRPC authors.
++           2018 gRPC authors.
++           2019 gRPC authors.
++           2023 gRPC authors.
++           2024 gRPC authors.
++           2020 gRPC authors.
++           2014 gRPC authors.
++License: Apache-2.0
++
++Files: vendor/google.golang.org/api/*
++Copyright: 2011 Google Inc.
++License: BSD-3-Clause
++
++Files: vendor/google.golang.org/api/internal/third_party/uritemplates/*
++Copyright: 2013 Joshua Tacoma.
++           2016 The Go Authors.
++License: BSD-3-Clause
++
++Files: vendor/go.opentelemetry.io/*
++Copyright: The OpenTelemetry Authors
++License: Apache-2.0
++
++Files: vendor/gopkg.in/yaml.v3/*
++Copyright: 2006-2010 Kirill Simonov
++           2011-2019 Canonical Ltd
++           2011-2016 Canonical Ltd.
++License: Apache-2.0
++
++Files: vendor/golang.org/x/sys/*
++Copyright: 2009 The Go Authors.
++License: BSD-3-Clause
++
++Files: vendor/golang.org/x/time/*
++Copyright: 2009 The Go Authors.
++License: BSD-3-Clause
++
++Files: vendor/golang.org/x/net/*
++Copyright: 2009 The Go Authors.
++License: BSD-3-Clause
++
++Files: vendor/golang.org/x/sync/*
++Copyright: 2009 The Go Authors.
++License: BSD-3-Clause
++
++Files: vendor/golang.org/x/crypto/*
++Copyright: 2009 The Go Authors.
++License: BSD-3-Clause
++
++Files: vendor/golang.org/x/oauth2/*
++Copyright: 2014 The Go Authors.
++           2023 The Go Authors.
++           2009 The Go Authors.
++License: BSD-3-Clause
++
++Files: vendor/golang.org/x/text/*
++Copyright: 2009 The Go Authors.
++License: BSD-3-Clause
++
++Files: vendor/github.com/mdlayher/socket/*
++Copyright: 2021 Matt Layher
++License: MIT
++
++Files: vendor/github.com/mdlayher/vsock/*
++Copyright: 2017-2022 Matt Layher
++License: MIT
++
++Files: vendor/github.com/felixge/httpsnoop/*
++Copyright: 2016 Felix Geisendörfer (felix@debuggable.com)
++License: MIT
++
++Files: vendor/github.com/pin/tftp/*
++Copyright: 2016 Dmitri Popov
++License: MIT
++
++Files: vendor/github.com/golang/groupcache/*
++Copyright: 2013 Google Inc.
++License: Apache-2.0
++
++Files: vendor/github.com/golang/protobuf/*
++Copyright: 2016 The Go Authors
++License: BSD-3-Clause
++
++Files: vendor/github.com/godbus/dbus/v5/*
++Copyright: 2013, Georg Reinke (<guelfey at gmail dot com>), Google
++License: BSD-2-Clause
++
++Files: vendor/github.com/beevik/etree/*
++Copyright: 2015-2019 Brett Vickers.
++License: BSD-2-Clause
++
++Files: vendor/github.com/davecgh/go-spew/*
++Copyright: 2012-2016 Dave Collins <dave@davec.name>
++License: ISC
++
++Files: vendor/github.com/spf13/pflag/*
++Copyright: 2009 The Go Authors.
++           2012 Alex Ogier.
++           2012 The Go Authors.
++License: BSD-3-Clause
++
++Files: vendor/github.com/google/renameio/v2/*
++Copyright: 2018 Google Inc.
++           2021 Google Inc.
++License: Apache-2.0
++
++Files: vendor/github.com/google/s2a-go/*
++Copyright: 2021 Google LLC
++License: Apache-2.0
++
++Files: vendor/github.com/google/uuid/*
++Copyright: 2016 Google Inc.
++           2017 Google Inc.
++           2018 Google Inc.
++           2021 Google Inc.
++           2023 Google Inc.
++           2009,2014 Google Inc.
++License: BSD-3-Clause
++
++Files: vendor/github.com/coreos/go-systemd/v22/*
++Copyright: 2018 CoreOS, Inc
++License: Apache-2.0
++
++Files: vendor/github.com/coreos/go-json/*
++Copyright: 2010 The Go Authors.
++           2011 The Go Authors.
++           2013 The Go Authors.
++           2016 The Go Authors.
++           2019 The Go Authors.
++           2012 The Go Authors.
++License: BSD-3-Clause
++
++Files: vendor/github.com/coreos/vcontext/*
++Copyright: 2019 Red Hat, Inc
++License: Apache-2.0
++
++Files: vendor/github.com/coreos/go-semver/*
++Copyright: 2018 CoreOS, Inc
++License: Apache-2.0
++
++Files: vendor/github.com/vmware/vmw-guestinfo/*
++Copyright: 2017 VMware, Inc. All rights reserved.
++License: Apache-2.0
++
++Files: vendor/github.com/jmespath/go-jmespath/*
++Copyright: 2015 James Saryerwinnie
++License: Apache-2.0
++
++Files: vendor/github.com/mitchellh/reflectwalk/*
++Copyright: 2013 Mitchell Hashimoto
++License: MIT
++
++Files: vendor/github.com/mitchellh/copystructure/*
++Copyright: 2014 Mitchell Hashimoto
++License: MIT
++
++Files: vendor/github.com/vincent-petithory/dataurl/*
++Copyright: 2014 Vincent Petithory
++License: MIT
++
++Files: vendor/github.com/go-logr/logr/*
++Copyright: 2019 The logr Authors.
++           2020 The logr Authors.
++           2023 The logr Authors.
++License: Apache-2.0
++
++Files: vendor/github.com/go-logr/stdr/*
++Copyright: 2019 The logr Authors.
++License: Apache-2.0
++
++Files: vendor/github.com/pmezard/go-difflib/*
++Copyright: 2013, Patrick Mezard
++License: BSD-3-Clause
++
++Files: vendor/github.com/containers/libhvee/*
++Copyright: 2023 github.com/containers/libhvee Contributors
++License: Apache-2.0
++
++Files: vendor/github.com/googleapis/gax-go/v2/*
++Copyright: 2016, Google Inc.
++           2018, Google Inc.
++           2022, Google Inc.
++           2016, Google Inc.
++License: BSD-3-Clause
++
++Files: vendor/github.com/googleapis/enterprise-certificate-proxy/*
++Copyright: 2022 Google LLC
++License: Apache-2.0
++
++Files: vendor/github.com/aws/aws-sdk-go/internal/sync/singleflight/*
++Copyright: 2013 The Go Authors.
++           2009 The Go Authors.
++License: BSD-3-Clause
++
++Files: vendor/github.com/aws/aws-sdk-go/*
++Copyright: 2014-2015 Stripe, Inc.
++           2015 Amazon.com, Inc.
++License: Apache-2.0
++
++Files: vendor/github.com/stretchr/testify/*
++Copyright: 2012-2020 Mat Ryer, Tyler Bunnell and contributors.
++License: MIT
++
++Files: vendor/go.opencensus.io/*
++Copyright: 2017 OpenCensus Authors
++License: Apache-2.0
++
++Files: vendor/cloud.google.com/go/*
++Copyright: 2024 Google LLC
++License: Apache-2.0
++
++Files: vendor/cloud.google.com/go/compute/metadata/*
++Copyright: 2014 Google LLC
++           2021 Google LLC
++License: Apache-2.0
++
++Files: vendor/cloud.google.com/go/auth/*
++Copyright: 2023 Google LLC
++License: Apache-2.0
++
++Files: vendor/cloud.google.com/go/auth/oauth2adapt/*
++Copyright: 2023 Google LLC
++License: Apache-2.0
++
++Files: vendor/cloud.google.com/go/iam/*
++Copyright: 2016 Google LLC
++License: Apache-2.0
++
++Files: vendor/cloud.google.com/go/storage/*
++Copyright: 2021 Google LLC
++           2014 Google LLC
++           2016 Google LLC
++           2017 Google LLC
++           2019 Google LLC
++           2020 Google LLC
++           2022 Google LLC
++           2023 Google LLC
++License: Apache-2.0
+ 
+ Files: *
+ Copyright: 2015-2019, CoreOS, Inc.
