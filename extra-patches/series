@@ -4,3 +4,4 @@
 0004-add-ign-converter-to-translate-2-3.patch
 0005-Run-go-mod-tidy.patch
 0006-Run-go-mod-vendor.patch
+0007-append-uuid-to-config-url.patch

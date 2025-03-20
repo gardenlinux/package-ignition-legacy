@@ -5,6 +5,8 @@ tar -f "$dir/orig.tar" --delete --delete _/DCO
 
 apt_src --ignore-orig ignition
 
+# rename .install
+mv "$dir/src/debian/ignition.install" "$dir/src/debian/ignition-legacy.install"
 # apply toolchain patch series
 apply_patches
 # append extra-patches to debian patches
