@@ -1,26 +1,16 @@
-From 83ea002d2c2215bd1f6f9836f163257ad02106ae Mon Sep 17 00:00:00 2001
-From: Tobias Jungel <tobias.jungel@gmail.com>
-Date: Sat, 2 Nov 2024 10:10:30 +0100
-Subject: [PATCH 1/6] Detect selinux support and label files as needed
-
----
- internal/distro/distro.go | 14 ++++++++++++--
- 1 file changed, 12 insertions(+), 2 deletions(-)
-
 diff --git a/internal/distro/distro.go b/internal/distro/distro.go
-index e5254649..44401cbd 100644
+index 20190903..19f9d497 100644
 --- a/internal/distro/distro.go
 +++ b/internal/distro/distro.go
-@@ -17,6 +17,8 @@ package distro
+@@ -16,6 +16,7 @@ package distro
+ 
  import (
  	"fmt"
- 	"os"
-+
 +	"github.com/opencontainers/selinux/go-selinux"
+ 	"os"
  )
  
- // Distro-specific settings that can be overridden at link time with e.g.
-@@ -69,7 +71,7 @@ var (
+@@ -70,7 +71,7 @@ var (
  	kargsCmd = "ignition-kargs-helper"
  
  	// Flags
@@ -29,7 +19,7 @@ index e5254649..44401cbd 100644
  	blackboxTesting = "false"
  	// writeAuthorizedKeysFragment indicates whether to write SSH keys
  	// specified in the Ignition config as a fragment to
-@@ -125,7 +127,7 @@ func LuksRealRootKeyFilePath() string   { return luksRealRootKeyFilePath }
+@@ -127,7 +128,7 @@ func LuksRealRootKeyFilePath() string   { return luksRealRootKeyFilePath }
  func ResultFilePath() string            { return resultFilePath }
  func LuksRealVolumeKeyFilePath() string { return luksCexSecureKeyRepo }
  
@@ -38,7 +28,7 @@ index e5254649..44401cbd 100644
  func BlackboxTesting() bool { return bakedStringToBool(blackboxTesting) }
  func WriteAuthorizedKeysFragment() bool {
  	return bakedStringToBool(fromEnv("WRITE_AUTHORIZED_KEYS_FRAGMENT", writeAuthorizedKeysFragment))
-@@ -150,3 +152,11 @@ func bakedStringToBool(s string) bool {
+@@ -153,3 +154,11 @@ func bakedStringToBool(s string) bool {
  		panic(fmt.Sprintf("value '%s' cannot be interpreted as a boolean", s))
  	}
  }
@@ -50,6 +40,3 @@ index e5254649..44401cbd 100644
 +	}
 +	return *selinuxEnabled
 +}
--- 
-2.47.0
-
